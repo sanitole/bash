@@ -3,15 +3,26 @@
 read -p "Enter first number: " num1
 read -p "Enter second number: " num2
 
-#calculate sum
-sum=$(($num1+$num2))
+echo -e "Pick choice:\n 1-addition\n 2-substruction\n 3-multiplication\n 4-division"
 
-echo "Sum is: $sum"
+read -p "Pick you choice: " choice
 
-read -p "Enter first number: " num1
-read -p "Enter second number: " num2
-
-# show difference
-difference=$(($num1-$num2))
-
-echo "difference is: $difference"
+if [ $choice -eq 1 ]
+then
+  result=$(($num1+$num2))
+  echo "Sum is $result"
+elif [ $choice -eq 2 ]
+then
+  result=$(($num1-$num2))
+  echo "Difference is $result"
+elif [ $choice -eq 3 ]
+then
+  result=$(($num1*$num2))
+  echo "Product is $result"
+elif [ $choice -eq 4 ]
+then
+  result=$(($num1/$num2))
+  echo "Quotient is $result"
+else
+  echo "Pick the right choice"
+fi
